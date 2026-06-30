@@ -1,0 +1,45 @@
+.button {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 80;
+
+  width: 3.5rem;
+  height: 3.5rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+
+  background-color: #25d366;
+  color: #ffffff;
+
+  box-shadow: 0 1rem 2.5rem rgba(37, 211, 102, 0.34);
+
+  transition:
+    transform var(--transition-fast),
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  background-color: #1ebe5d;
+  box-shadow: 0 1.25rem 3rem rgba(37, 211, 102, 0.42);
+}
+
+.button:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+@media (min-width: 768px) {
+  .button {
+    right: 1.5rem;
+    bottom: 1.5rem;
+
+    width: 3.75rem;
+    height: 3.75rem;
+  }
+}
