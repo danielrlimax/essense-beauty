@@ -1,0 +1,31 @@
+:root {
+  --font-family-base: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+
+  --color-background: #fbf7f4;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f4ebe6;
+
+  --color-primary: #8b5e4c;
+  --color-primary-dark: #5f3d31;
+  --color-primary-light: #c49a87;
+
+  --color-text: #231f20;
+  --color-text-soft: #6f625c;
+  --color-border: #e8d8cf;
+
+  --color-whatsapp: #1f7a4d;
+  --color-whatsapp-dark: #17613c;
+
+  --container-width: 1180px;
+
+  --radius-sm: 0.625rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+
+  --shadow-soft: 0 1.5rem 4rem rgba(95, 61, 49, 0.12);
+
+  --transition-fast: 180ms ease;
+  --transition-default: 220ms ease;
+}

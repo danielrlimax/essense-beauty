@@ -1,0 +1,29 @@
+.section {
+  position: relative;
+}
+
+.sm {
+  padding-block: 3rem;
+}
+
+.md {
+  padding-block: 4rem;
+}
+
+.lg {
+  padding-block: 5rem;
+}
+
+@media (min-width: 768px) {
+  .sm {
+    padding-block: 4rem;
+  }
+
+  .md {
+    padding-block: 5.5rem;
+  }
+
+  .lg {
+    padding-block: 7rem;
+  }
+}
