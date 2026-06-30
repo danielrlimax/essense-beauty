@@ -8,6 +8,7 @@ import styles from './Button.module.css';
 
 type ButtonVariant = 'primary' | 'secondary' | 'ghost';
 type ButtonSize = 'sm' | 'md' | 'lg';
+type NativeButtonType = 'button' | 'submit' | 'reset';
 
 type ButtonBaseProps = {
   children: ReactNode;
@@ -18,17 +19,29 @@ type ButtonBaseProps = {
 };
 
 type ButtonLinkProps = ButtonBaseProps &
-  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'className' | 'children'> & {
+  Omit<
+    AnchorHTMLAttributes<HTMLAnchorElement>,
+    'children' | 'className' | 'href' | 'type'
+  > & {
     href: string;
     external?: boolean;
   };
 
 type ButtonElementProps = ButtonBaseProps &
-  Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className' | 'children'> & {
-    href?: never;
+  Omit<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    'children' | 'className' | 'type'
+  > & {
+    href?: undefined;
+    external?: never;
+    type?: NativeButtonType;
   };
 
 type ButtonProps = ButtonLinkProps | ButtonElementProps;
+
+function isLinkButton(props: ButtonProps): props is ButtonLinkProps {
+  return typeof props.href === 'string';
+}
 
 export function Button(props: ButtonProps) {
   const {
@@ -49,7 +62,7 @@ export function Button(props: ButtonProps) {
     .filter(Boolean)
     .join(' ');
 
-  if ('href' in props && props.href) {
+  if (isLinkButton(props)) {
     const {
       children: _children,
       variant: _variant,
